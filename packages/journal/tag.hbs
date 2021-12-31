@@ -1,0 +1,29 @@
+{{!< default}} <main id="gh-main" class="gh-main gh-canvas">
+    {{#get "tags" include="count.posts" limit="all" as |category|}}
+    <section class="gh-pagehead categories-nav">
+        <header class="gh-pagehead-content">
+            <div class="gh-tag-label">Categories</div>
+
+            {{#foreach category}}
+            <h1 class="gh-tag-name gh-pagehead-title"><a href="/tag/{{slug}}" slug={{slug}}>{{name}}</a></h1>
+
+            <div class="gh-tag-description gh-pagehead-description">
+                {{#if description}}
+                {{description}}
+                {{else}}
+                A collection of {{plural count.posts empty="0 issues" singular="% issue" plural="% issues"}}
+                {{/if}}
+            </div>
+            {{/foreach}}
+        </header>
+    </section>
+    {{/get}}
+
+    <div class="gh-feed">
+        {{#foreach posts}}
+        {{> loop}}
+        {{/foreach}}
+    </div>
+
+    <button class="gh-loadmore gh-btn">Load more issues</button>
+    </main>

@@ -1,0 +1,39 @@
+<article class="gh-card {{post_class}}">
+    {{#if tags}}
+    <ul class="tag-links">
+        {{#foreach tags}}
+        <li>
+            <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+        </li>
+        {{/foreach}}
+    </ul>
+    {{/if}}
+    <a class="gh-card-link" href="{{url}}">
+        <header class="gh-card-header">
+            <h2 class="gh-card-title">{{title}}</h2>
+        </header>
+
+        <div class="gh-card-excerpt">{{excerpt}}</div>
+
+        <footer class="gh-card-meta">
+            <ul>
+                <li>
+
+                    <time class="gh-card-date" datetime="{{date format=" YYYY-MM-DD"}}">{{date}}</time>
+                    —
+                    <span class="gh-card-meta-wrapper">
+                        <span class="gh-card-duration">{{reading_time}}</span>
+
+                        {{^has visibility="public"}}
+                        {{> icons/star}}
+                        {{/has}}
+                    </span>
+                </li>
+
+                <li class="share">
+                    {{> share}}
+                </li>
+            </ul>
+        </footer>
+    </a>
+</article>

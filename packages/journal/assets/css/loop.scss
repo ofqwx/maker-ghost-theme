@@ -1,0 +1,23 @@
+.tag-links {
+    align-items: center;
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+        align-items: center;
+        display: flex;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+
+        & > a {
+            color: rgb(26, 171, 155);
+
+            &:hover {
+                color: rgb(16, 104, 94);
+                opacity: 1;
+            }
+        }
+    }
+}

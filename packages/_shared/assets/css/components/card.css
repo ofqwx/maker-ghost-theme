@@ -1,0 +1,75 @@
+/* Add extra margin before/after any cards,
+except for when immediately preceeded by a heading */
+
+.gh-content :not(.kg-card):not([id]) + .kg-card {
+    margin-top: 4rem;
+}
+
+.gh-content .kg-card + :not(.kg-card) {
+    margin-top: 4rem;
+}
+
+/* Image
+/* ---------------------------------------------------------- */
+
+.kg-image {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Embed
+/* ---------------------------------------------------------- */
+
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Gallery
+/* ---------------------------------------------------------- */
+
+.kg-image,
+.kg-gallery-image {
+    cursor: pointer;
+}
+
+/* Toggle
+/* ---------------------------------------------------------- */
+
+.kg-toggle-card .kg-toggle-heading-text {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.has-serif-title .kg-toggle-heading-text {
+    font-family: var(--font-serif);
+}
+
+.kg-toggle-content > * + * {
+    margin: 2rem 0 0;
+}
+
+/* Callout
+/* ---------------------------------------------------------- */
+
+.kg-callout-card-accent a {
+    text-decoration: underline;
+}
+
+/* Blockquote
+/* ---------------------------------------------------------- */
+
+blockquote.kg-blockquote-alt {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--color-secondary-text);
+}
+
+/* Button
+/* ---------------------------------------------------------- */
+
+.kg-button-card .kg-btn {
+    font-size: 1em;
+}

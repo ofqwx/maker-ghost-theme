@@ -1,0 +1,55 @@
+.index {
+    &.gh-main {
+        padding-top: 0;
+    }
+
+    .gh-latest {
+        &.gh-card {
+            margin-top: 14rem;
+            margin-bottom: 5rem;
+        }
+
+        .gh-card-link {
+            .gh-article-excerpt {
+                font-size: 2rem;
+            }
+        }
+
+        .gh-card-header {
+            h2 {
+                font-size: 5.4rem;
+            }
+        }
+    }
+}
+
+.responsive-header-img {
+    height: 32rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 8rem;
+}
+
+.header-image-content {
+    margin-top: 11rem;
+    position: relative;
+}
+
+.header-image-content h2 {
+    color: #fff;
+    font-size: 5.4rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.header-image-content p {
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1.35;
+    margin-top: 1.6rem;
+    max-width: 920px;
+}
