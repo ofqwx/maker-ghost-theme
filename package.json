@@ -5,7 +5,12 @@
         "packages/*"
     ],
     "scripts": {
+        "postinstall": "gulp setupGhost",
         "dev": "gulp",
+        "ghost-start": "yarn ghost start --dir packages/ghost",
+        "ghost-stop": "yarn ghost stop --dir packages/ghost",
+        "ghost-restart": "yarn ghost restart --dir packages/ghost",
+        "ghost-status": "yarn ghost ls --dir packages/ghost",
         "lint": "gulp lint",
         "symlink": "gulp symlink",
         "test": "gulp test",
@@ -17,6 +22,7 @@
         "beeper": "2.1.0",
         "concurrently": "6.4.0",
         "cssnano": "5.0.12",
+        "ghost-cli": "^1.18.1",
         "gscan": "4.16.0",
         "gulp": "4.0.2",
         "gulp-concat": "2.6.1",

@@ -14,12 +14,13 @@ const uglify = require("gulp-uglify");
 const beeper = require("beeper");
 const zip = require("gulp-zip");
 
-sass.compiler = require('node-sass');
+sass.compiler = require("node-sass");
 
 // postcss plugins
 const easyimport = require("postcss-easy-import");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
+const { execSync } = require("child_process");
 
 function serve(done) {
     livereload.listen();
@@ -77,7 +78,7 @@ function doJS(path, done) {
 
 function main(done) {
     const tasks = glob
-        .sync("packages/*", { ignore: "packages/_shared" })
+        .sync("packages/*", { ignore: ["packages/_shared", "packages/ghost"] })
         .map((path) => {
             const packageName = require(`./${path}/package.json`).name;
 
@@ -200,6 +201,14 @@ function symlink(done) {
     done();
 }
 
+function setupGhost(done) {
+    execSync("ghost install local --dir packages/ghost");
+    execSync(
+        `ln -sfn ${__dirname}/packages/maker-ses-ghost-theme ${__dirname}/packages/ghost/content/themes`
+    );
+    done();
+}
+
 function test(done) {
     const testLint = (lintDone) => {
         doLint(false, false, done);
@@ -285,6 +294,7 @@ function zipper(done) {
 
 exports.lint = lint;
 exports.symlink = symlink;
+exports.setupGhost = setupGhost;
 exports.test = test;
 exports.testCI = testCI;
 exports.zip = series(build, zipper);
