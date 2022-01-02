@@ -24,7 +24,7 @@ yarn ghost-start
 ```
 
 ```bash
-# restart ghots server
+# restart ghost server
 yarn ghost-restart
 ```
 
