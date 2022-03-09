@@ -26,11 +26,11 @@
             </p>
         </div>
 
-        <article class="gh-latest gh-card {{post_class}}">
+        <article class="gh-latest gh-featured gh-card {{post_class}}">
             <a class="gh-card-link" href="{{url}}">
                 <header class="gh-card-header">
                     <div class="gh-article-meta">
-                        <span class="gh-card-date">Latest — <time datetime="{{date format="
+                        <span class="gh-card-date">Featured — <time datetime="{{date format="
                                 YYYY-MM-DD"}}">{{date}}</time></span>
                     </div>
                     
@@ -123,7 +123,7 @@
                     {{/if}}
                 </section>
 
-                {{#get "posts" filter="featured:true" limit="all" as |featured|}}
+                {{!-- {{#get "posts" filter="featured:true" limit="all" as |featured|}}
                 {{#if featured}}
                 <section class="gh-section">
                     <h3 class="gh-section-title">Featured</h3>
@@ -135,7 +135,7 @@
                     </div>
                 </section>
                 {{/if}}
-                {{/get}}
+                {{/get}} --}}
 
                 {{#get "tags" include="count.posts" limit="all" as |topic|}}
                 <section class="gh-section">

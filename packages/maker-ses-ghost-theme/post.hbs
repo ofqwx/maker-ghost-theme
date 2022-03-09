@@ -15,9 +15,9 @@
 
             <h1 class="gh-article-title">{{title}}</h1>
 
-            {{#if custom_excerpt}}
+            {{!-- {{#if custom_excerpt}}
             <p class="gh-article-excerpt">{{custom_excerpt}}</p>
-            {{/if}}
+            {{/if}} --}}
 
             {{#if feature_image}}
             <figure class="gh-article-image">
@@ -37,7 +37,7 @@
             {{!-- <aside class="toc"></aside> --}}
             {{content}}
 
-            {{#get "posts" limit="2" as |related|}}
+            {{!-- {{#get "posts" limit="2" as |related|}}
             {{#if related}}
             <section class="gh-section">
                 <h3 class="gh-section-title">Related Posts</h3>
@@ -49,7 +49,7 @@
                 </div>
             </section>
             {{/if}}
-            {{/get}}
+            {{/get}} --}}
         </div>
 
         {{#is "post"}}
