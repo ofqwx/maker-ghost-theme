@@ -23,6 +23,7 @@ projectFilesBackup
 
 dist/
 packages/ghost
+packages/maker-ses-ghost-theme/assets/built
 
 config.json
 changelog.md
