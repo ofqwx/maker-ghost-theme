@@ -35,6 +35,11 @@ yarn ghost-stop
 ```
 
 ```bash
+# reset ghost database
+yarn ghost-reset
+```
+
+```bash
 # check status of ghost server
 yarn ghost-status
 ```
