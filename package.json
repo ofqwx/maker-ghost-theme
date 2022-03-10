@@ -11,6 +11,7 @@
         "ghost-stop": "yarn ghost stop --dir packages/ghost",
         "ghost-restart": "yarn ghost restart --dir packages/ghost",
         "ghost-status": "yarn ghost ls --dir packages/ghost",
+        "ghost-reset": "gulp resetGhost",
         "lint": "gulp lint",
         "symlink": "gulp symlink",
         "test": "gulp test",

@@ -209,6 +209,18 @@ function setupGhost(done) {
     done();
 }
 
+function resetGhost(done) {
+    try {
+        execSync(
+            `rm ${__dirname}/packages/ghost/content/data/ghost-local.db`
+        );
+    } catch {
+        console.log('Database not found, starting ghost now...')
+    }
+    execSync("ghost start --dir packages/ghost");
+    done();
+}
+
 function test(done) {
     const testLint = (lintDone) => {
         doLint(false, false, done);
@@ -295,6 +307,7 @@ function zipper(done) {
 exports.lint = lint;
 exports.symlink = symlink;
 exports.setupGhost = setupGhost;
+exports.resetGhost = resetGhost;
 exports.test = test;
 exports.testCI = testCI;
 exports.zip = series(build, zipper);
