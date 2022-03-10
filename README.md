@@ -35,7 +35,7 @@ yarn ghost-stop
 ```
 
 ```bash
-# reset ghost database
+# reset ghost local database
 yarn ghost-reset
 ```
 
